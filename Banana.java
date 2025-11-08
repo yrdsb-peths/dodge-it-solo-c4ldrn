@@ -6,7 +6,7 @@ public class Banana extends Actor
     
     public void act()
     {
-        move(-10);
+        move(-15);
         
         if(getX() <= 0) {
             resetBanana();
@@ -14,14 +14,14 @@ public class Banana extends Actor
         
         if(isTouching(Hero.class)){
             // Add a game over symbol
-            Skull skull = new Skull();
+            skull skull = new skull();
             getWorld().addObject(skull, 300, 200);
             getWorld().removeObject(this);
         }
     }
     
     public void resetBanana() {
-        int num = Greenfoot.getRandomNumber(2);
+        int num = Greenfoot.getRandomNumber(3);
         if(num == 0) {
             setLocation(600, 100); 
         } else {
